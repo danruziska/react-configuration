@@ -21,8 +21,7 @@ module.exports = {
     },
     module: {
         rules: [
-            { test: /\.jsx?$/, use: ['babel-loader'],exclude: /node_modules/ }, //Resolver os arquivos de extensão .jsx com o babel-loader. Não considerar os arquivos dentro da pasta node_modules                                    
-            { test: /\.js?$/, use: ['babel-loader'],exclude: /node_modules/ } //Resolver os arquivos de extensão .jsx com o babel-loader. Não considerar os arquivos dentro da pasta node_modules                                    
+            { test: /\.jsx?$/, loaders: ['babel-loader','eslint-loader'],exclude: /node_modules/ }, //Resolver os arquivos de extensão .jsx com o babel-loader. Não considerar os arquivos dentro da pasta node_modules                                                
         ]
     },
     plugins:[

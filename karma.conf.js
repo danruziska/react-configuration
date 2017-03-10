@@ -50,7 +50,7 @@ module.exports = function(config) {
 
     //Tirar as mensagens do webpack durante a execução do karma (muito verbose!)
     webpackServer: {
-      noInfo: true
+      quiet:true
     }
   })
 }
