@@ -4,9 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "npm-run-all --parallel test exec:devServer",
+    "start": "npm-run-all --parallel test lint:watch exec:devServer",
     "exec:devServer": "babel-node npm_scripts/devServer.js",
-    "test": "karma start"
+    "test": "karma start",
+    "lint": "esw webpack.config.* src tools --color",
+    "lint:watch": "npm run lint -- --watch"
   },
   "author": "",
   "license": "ISC",
@@ -21,6 +23,7 @@
     "chalk": "^1.1.3",
     "eslint": "^3.17.1",
     "eslint-loader": "^1.6.3",
+    "eslint-watch": "^3.0.1",
     "html-webpack-plugin": "^2.28.0",
     "karma": "^1.5.0",
     "karma-chrome-launcher": "^2.0.0",

@@ -10,7 +10,7 @@ export default class App extends Component {
   render() {
     return (
       <div>
-          <h1>Teste React!</h1>
+          <h1>Teste React!...</h1>
       </div>
     );
   }
