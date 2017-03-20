@@ -1,8 +1,9 @@
 {
   "env":{
     "dev":{
-      "presets": [        
-        "react"
+      "presets": [      
+        "react",
+        ["es2015", {"modules":false}]
       ],
       "plugins": [
         "react-hot-loader/babel"

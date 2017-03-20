@@ -3,6 +3,7 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 process.env.BABEL_ENV = 'dev';
+process.noDeprecation = true;
 
 module.exports = {   
     resolve: {
@@ -21,7 +22,7 @@ module.exports = {
     },
     module: {
         rules: [
-            { test: /\.jsx?$/, loaders: ['babel-loader','eslint-loader'],exclude: /node_modules/ } //Resolver os arquivos de extensão .jsx com o babel-loader. Não considerar os arquivos dentro da pasta node_modules                                                            
+            { test: /\.jsx?$/, loaders: ['babel-loader','eslint-loader'],exclude: /node_modules/ }, //Resolver os arquivos de extensão .jsx com o babel-loader. Não considerar os arquivos dentro da pasta node_modules                                                                                    
         ]
     },
     plugins:[
@@ -32,5 +33,10 @@ module.exports = {
             template:'index.template.ejs', //indica o arquivo de template do HTML, usando o padrão EJS
             inject:'body' //insere a tag script no fim da tag body
         })
-    ]
+    ],
+    externals: {
+        'react/addons': true,
+        'react/lib/ExecutionEnvironment': true,
+        'react/lib/ReactContext': true
+    }
 }
